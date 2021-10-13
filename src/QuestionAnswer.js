@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
+import { Button, Modal } from "react-bootstrap";
 import { dict, questions, answers } from "./data";
 
 class QuestionAnswer extends React.Component {
@@ -12,6 +12,7 @@ class QuestionAnswer extends React.Component {
       showAnswer: false,
       isDone: false,
       counter: questions.length,
+      showModal: false,
     };
   }
 
@@ -19,6 +20,7 @@ class QuestionAnswer extends React.Component {
     this.setState({
       counter: this.state.counter - 1,
       showAnswer: false,
+      showModal: true,
     });
     if (this.state.counter <= 0) {
       this.setState({
@@ -43,6 +45,10 @@ class QuestionAnswer extends React.Component {
     this.setState({ showAnswer: true });
   };
 
+  handleHideModal = () => {
+    this.setState({ showModal: false });
+  }
+
   render() {
     return (
       <>
@@ -55,9 +61,15 @@ class QuestionAnswer extends React.Component {
         )}
         {this.state.showQuestion && (
           <>
-            <p>{this.state.question}</p>
-            <Button onClick={this.showMeTheAnswer}>Show Me the Answer!</Button>
-            {this.state.showAnswer && <p>{this.state.answer}</p>}
+            <Modal className="modal" show={this.state.showModal} onHide={this.handleHideModal}>
+              <Modal.Header closeButton>
+              </Modal.Header>
+              <Modal.Body className="question" >{this.state.question}</Modal.Body>
+              {this.state.showAnswer && <Modal.Body className="answer" >{this.state.answer}</Modal.Body>}
+              <Button onClick={this.showMeTheAnswer}>
+                Show Me the Answer!
+              </Button>
+            </Modal>
           </>
         )}
       </>

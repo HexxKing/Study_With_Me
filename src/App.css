@@ -32,3 +32,19 @@
   margin: 10px;
   border: 5px solid #ccc;
 }
+
+.modal {
+  font-size: 30px;
+}
+
+.question {
+  color: rgb(66, 30, 87); 
+  border-top: 5px solid rgb(66, 30, 87);
+  background-color: #3801524d;
+}
+
+.answer {
+  color: #6f4681fb;
+  border-bottom: 5px solid #b092befb;
+  background-color: rgb(232, 222, 236);
+}

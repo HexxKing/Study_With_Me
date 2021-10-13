@@ -28,7 +28,7 @@ class Student extends React.Component {
     return (
       <>
         <Card style={{ width: "18rem" }} bg="info" border="primary" className='card'>
-          <Card.Title className="cardTitle" >Keep Track of Your Points!</Card.Title>
+          <Card.Title className="cardTitle" >Scoreboard!</Card.Title>
           <Button size="lg" variant="primary" onClick={this.tallyCorrectAnswer}>{this.props.student}</Button>
           <Card.Body>
             <Card.Text className="cardText" >
