@@ -27,12 +27,12 @@ class Student extends React.Component {
   render() {
     return (
       <>
-        <Card style={{ width: "20rem" }} bg="info" border="primary" className='card'>
+        <Card style={{ width: "18rem" }} bg="info" border="primary" className='card'>
           <Card.Title className="cardTitle" >Keep Track of Your Points!</Card.Title>
           <Button size="lg" variant="primary" onClick={this.tallyCorrectAnswer}>{this.props.student}</Button>
           <Card.Body>
             <Card.Text className="cardText" >
-              Review Q's Answered Correctly: {this.state.correctAnswerCounter}
+              Q's Answered Correctly: {this.state.correctAnswerCounter}
             </Card.Text>
             <Card.Text className="cardText" >
               Extra Credit Points Earned: {this.state.extraCreditCounter}
