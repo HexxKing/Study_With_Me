@@ -106,3 +106,11 @@ Offer a way for users, testers, or contributors to contact you or the team manag
 ## License 
 
 Clearly state the type of license your project uses, even during the production phase.
+
+## Resources
+
+List all resources used in the creation of this application.
+
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [React](https://react.dev/)
+- [Bootstrap](https://react-bootstrap.netlify.app/)
