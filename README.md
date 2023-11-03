@@ -1,10 +1,10 @@
 # This React Application is deployed [on Netlify](https://extra-credit-gameshow.netlify.app/)
 
-[Trello Project Management Board](https://github.com/HexxKing/Study_With_Me.git)
-
 ## Project Overview 
 
-**Currently in Production**
+**v1.0.0 - v2 is currently in development**
+
+[Trello Project Management Board](https://github.com/HexxKing/Study_With_Me.git)
 
 Welcome to **Study With Me**: your personal study buddy, growing and evolving just like you!
 
@@ -89,25 +89,19 @@ Though I am not currently accepting contributions, I am always eager to hear new
 
 ## Testing and Feedback 
 
-Your feedback is invaluable in improving this application. Feel free to use the app via this [link](https://extra-credit-gameshow.netlify.app/) to explore its current functionalities. If you would like to send feedback, you can reach out by shooting me an email at **hexxking13@gmail.com**.
-
-## Version Information 
-
-**Currently: v1.0.0**
-
-Please see the [Current Development Status](https://github.com/HexxKing/Study_With_Me#current-development-status) and [Development Plans](https://github.com/HexxKing/Study_With_Me#development-plans) sections for a sneak peek at future features! 
-
-## Contributor Guidelines 
-
-Provide information on how others can contribute to the project, including guidelines for submitting code, documenting features, or addressing issues.
-
-## Contact Information 
-
-Offer a way for users, testers, or contributors to contact you or the team managing the project.
+Your feedback is invaluable in improving this application. Feel free to use the app via this [link](https://extra-credit-gameshow.netlify.app/) to explore its current functionalities. If you would like to send feedback, you can reach out by shooting me an email at **hexxking13@gmail.com**. 
 
 ## License 
 
-Clearly state the type of license your project uses, even during the production phase.
+MIT License
+
+Copyright (c) 2023 Heather "Hexx" King
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Tools and Resources
 
