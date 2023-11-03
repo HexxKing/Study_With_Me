@@ -1,3 +1,5 @@
+![Hero Header Banner](./doc-assets/hero_banner.png)
+
 # This React Application is deployed [on Netlify](https://extra-credit-gameshow.netlify.app/)
 
 ## Version 1.0.0
