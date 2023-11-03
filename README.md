@@ -107,10 +107,13 @@ Offer a way for users, testers, or contributors to contact you or the team manag
 
 Clearly state the type of license your project uses, even during the production phase.
 
-## Resources
-
-List all resources used in the creation of this application.
+## Tools and Resources
 
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [React](https://react.dev/)
 - [Bootstrap](https://react-bootstrap.netlify.app/)
+- [Trello](https://trello.com/)
+- [Miro](https://miro.com/)
+- [Draw.io](https://app.diagrams.net/)
+- [Adobe Color Wheel](https://color.adobe.com/create/color-wheel)
+- [Canva](https://www.canva.com/)
