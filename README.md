@@ -28,7 +28,7 @@ As of now:
 
 - Further elevating the user experience, **Version 2** will offer the ability to curate collections of quiz topics. Users can select specific topics, streamlining their study sessions and enhancing focus.
 
-## Roadmap or Development Plans 
+## Development Plans 
 
 Looking ahead:
 
@@ -93,9 +93,9 @@ Your feedback is invaluable in improving this application. Feel free to use the 
 
 ## Version Information 
 
-**v1.0.0**
+**Currently: v1.0.0**
 
-Please see the 
+Please see the [Current Development Status](https://github.com/HexxKing/Study_With_Me#current-development-status) and [Development Plans](https://github.com/HexxKing/Study_With_Me#development-plans) sections for a sneak peek at future features! 
 
 ## Contributor Guidelines 
 
