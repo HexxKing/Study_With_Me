@@ -59,13 +59,11 @@ Looking ahead:
 
 ## Known Issues and Limitations 
 
-At this stage, I'd like to highlight a few known limitations within the application. It's important for both users and contributors to understand areas that might not be fully functional yet:
+At this stage, I'd like to highlight a few known limitations within the application. It's important for users to understand areas that might not be fully functional yet:
 
 - At present, the application lacks a backend server, API/CRUD capabilities, database, or authentication mechanisms, limiting the functionalities that can be offered.
 - Users can review the same set of 60 questions, but due to the absence of backend support, refreshing the page will reset the question set, prompting repetition of the same questions.
 - While the application is mobile-friendly, it's important to note that the current styling may not fully optimize the mobile experience aesthetically.
-
-I am committed to addressing these limitations and actively working on implementing future updates and features to enhance the application's functionality and user experience.
 
 If you would like to report an issue with the application, please do so [here](https://github.com/HexxKing/Study_With_Me/issues) and inlude the filled out template below:
 
@@ -75,12 +73,19 @@ If you would like to report an issue with the application, please do so [here](h
 - Screenshots or Recordings: If possible, include screenshots, recordings, or logs that illustrate the issue.
 - Environment Details: Specify the environment details where the issue occurred, such as:
   - Browser
-  - Device (laptop/desktop/tablet/mobile)
+  - Device (laptop, desktop, tablet, mobile, ect)
 - Additional Context: Provide any additional context that might be relevant to the issue, such as recent changs, error messages, or any related issues.
 
 ## How to Contribute 
 
-Encourage contributors to get involved in the development process. Include instructions on how they can contribute, such as by reporting issues, suggesting features, or making code contributions.
+Though I am not currently accepting contributions, I am always eager to hear new feature ideas and encourage engagement from users. To propose a feature, please [file an issue](https://github.com/HexxKing/Study_With_Me/issues) with the following details:
+
+- Title: Provide a descriptive title for the proposed feature.
+- Description: Detail the new feature idea, including its purpose and the problem it aims to solve.
+- Use Case: Explain how users will benefit from this new feature and the scenarios where it would be applicable.
+- Additional Context: Offer any extra information or context that might help in understanding or implementing the feature.
+- Possible Solution: If you have suggestions on how this feature could be implemented, please share your thoughts.
+- Resources: Add any links to resources you think might be helpful in implementing the proposed feature.
 
 ## Testing and Feedback 
 
