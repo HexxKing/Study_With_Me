@@ -89,11 +89,13 @@ Though I am not currently accepting contributions, I am always eager to hear new
 
 ## Testing and Feedback 
 
-Invite users to test the application and provide feedback. Mention how they can report any issues they encounter.
+Your feedback is invaluable in improving this application. Feel free to use the app via this [link](https://extra-credit-gameshow.netlify.app/) to explore its current functionalities. If you would like to send feedback, you can reach out by shooting me an email at **hexxking13@gmail.com**.
 
 ## Version Information 
 
-Include the current version of the application and how it might evolve in future releases.
+**v1.0.0**
+
+Please see the 
 
 ## Contributor Guidelines 
 
