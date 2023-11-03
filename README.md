@@ -47,16 +47,6 @@ Looking ahead:
     - "Is the concept I'm thinking of related to data structures?"
     - "Does the term I have in mind pertain to network security or cryptography?"
     - "Is the technology primarily used for front-end development?"
-    - "Is this concept related to algorithm complexity or Big O notation?"
-    - "Does the language I'm thinking of support functional programming?"
-    - "Is the term related to a specific database management system?"
-    - "Does this technology focus on cloud computing or virtualization?"
-    - "Is the concept primarily associated with machine learning or neural networks?"
-    - "Is the language I'm thinking of used for scripting or automation?"
-    - "Does this term involve the development of operating systems?"
-    - "Is the concept related to cybersecurity or ethical hacking?"
-    - "Does this technology revolve around web development or backend services?"
-    - "Is the term I'm thinking of associated with a specific programming paradigm?"
   - These questions aim to narrow down the possibilities and help the player deduce the correct computer science term, language, or concept they are trying to identify.
 
 ## Known Issues and Limitations 
