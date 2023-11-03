@@ -28,6 +28,8 @@ As of now:
 
 - Further elevating the user experience, **Version 2** will offer the ability to curate collections of quiz topics. Users can select specific topics, streamlining their study sessions and enhancing focus.
 
+## Roadmap or Development Plans 
+
 Looking ahead:
 
 - **Version 3** is expected to introduce an authorization feature, ensuring secure access and tailored experiences for users.
@@ -55,15 +57,26 @@ Looking ahead:
     - "Is the term I'm thinking of associated with a specific programming paradigm?"
   - These questions aim to narrow down the possibilities and help the player deduce the correct computer science term, language, or concept they are trying to identify.
 
-Stay tuned for these upcoming versions, as **Study With Me** continues to evolve and shape the future of immersive and collaborative learning experiences."
-
-## Roadmap or Development Plans 
-
-Provide a section outlining the future plans for the application. Detail upcoming features, improvements, or milestones that are expected in the next updates.
-
 ## Known Issues and Limitations 
 
-Acknowledge any known issues, bugs, or limitations within the application. This helps users and contributors understand what might not be fully functional yet.
+At this stage, I'd like to highlight a few known limitations within the application. It's important for both users and contributors to understand areas that might not be fully functional yet:
+
+- At present, the application lacks a backend server, API/CRUD capabilities, database, or authentication mechanisms, limiting the functionalities that can be offered.
+- Users can review the same set of 60 questions, but due to the absence of backend support, refreshing the page will reset the question set, prompting repetition of the same questions.
+- While the application is mobile-friendly, it's important to note that the current styling may not fully optimize the mobile experience aesthetically.
+
+I am committed to addressing these limitations and actively working on implementing future updates and features to enhance the application's functionality and user experience.
+
+If you would like to report an issue with the application, please do so [here](https://github.com/HexxKing/Study_With_Me/issues) and inlude the filled out template below:
+
+- Steps to Reproduce: Clearly outline the steps or actions needed to reproduce the issue. This helps developers recreate the problem.
+- Expected Behavior: Explain what you expected to happen when performing those steps.
+- Actual Behavior: Describe what actually occurred or the error/issue encountered.
+- Screenshots or Recordings: If possible, include screenshots, recordings, or logs that illustrate the issue.
+- Environment Details: Specify the environment details where the issue occurred, such as:
+  - Browser
+  - Device (laptop/desktop/tablet/mobile)
+- Additional Context: Provide any additional context that might be relevant to the issue, such as recent changs, error messages, or any related issues.
 
 ## How to Contribute 
 
