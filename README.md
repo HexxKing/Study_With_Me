@@ -8,7 +8,7 @@
 
 [Trello Project Management Board](https://github.com/HexxKing/Study_With_Me.git)
 
-## Project Overview 
+![Project Overview](./doc-assets/2.png)
 
 Welcome to **Study With Me**: your personal study buddy, growing and evolving just like you!
 
@@ -18,7 +18,7 @@ But that's just the beginning. I am cooking up some amazing new things that will
 
 **Study With Me** is all about empowering your learning experience. Stay tuned for more incredible features that will make studying not just effective, but fun and interactive too!
 
-## Current Development Status 
+![Current Development Status](./doc-assets/3.png)
 
 **Study With Me** is an evolving application currently in an active development phase. 
 
@@ -31,8 +31,8 @@ As of now:
 - In addition, **Version 2** will empower users by allowing them to contribute to the study bank. A new form will enable users to input their own questions and answers, expanding the range of study material.
 
 - Further elevating the user experience, **Version 2** will offer the ability to curate collections of quiz topics. Users can select specific topics, streamlining their study sessions and enhancing focus.
-
-## Development Plans 
+ 
+![Development Plans](./doc-assets/4.png)
 
 Looking ahead:
 
@@ -51,7 +51,7 @@ Looking ahead:
     - "Is the technology primarily used for front-end development?"
   - These questions aim to narrow down the possibilities and help the player deduce the correct computer science term, language, or concept they are trying to identify.
 
-## Known Issues and Limitations 
+![Known Issues and Limitations](./doc-assets/5.png)
 
 At this stage, I'd like to highlight a few known limitations within the application. It's important for users to understand areas that might not be fully functional yet:
 
@@ -70,7 +70,7 @@ If you would like to report an issue with the application, please do so [here](h
   - Device (laptop, desktop, tablet, mobile, ect)
 - Additional Context: Provide any additional context that might be relevant to the issue, such as recent changs, error messages, or any related issues.
 
-## How to Contribute 
+![How to Contribute](./doc-assets/6.png)
 
 Though I am not currently accepting contributions, I am always eager to hear new feature ideas and encourage engagement from users. To propose a feature, please [file an issue](https://github.com/HexxKing/Study_With_Me/issues) with the following details:
 
@@ -81,15 +81,15 @@ Though I am not currently accepting contributions, I am always eager to hear new
 - Possible Solution: If you have suggestions on how this feature could be implemented, please share your thoughts.
 - Resources: Add any links to resources you think might be helpful in implementing the proposed feature.
 
-## Testing and Feedback 
+![Testing and Feedback](./doc-assets/7.png)
 
 Your feedback is invaluable in improving this application. Feel free to use the app via this [link](https://extra-credit-gameshow.netlify.app/) to explore its current functionalities. If you would like to send feedback, you can reach out by shooting me an email at **hexxking13@gmail.com**. 
-
-## License 
+ 
+![License](./doc-assets/8.png)
 
 [MIT License](./LICENSE) - Copyright (c) 2023 Heather "Hexx" King
 
-## Tools and Resources
+![Tools and Resources](./doc-assets/9.png)
 
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [React](https://react.dev/)
