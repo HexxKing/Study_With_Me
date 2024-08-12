@@ -23,6 +23,9 @@ class Main extends React.Component {
         "Chemistry": "Atomic Structure, Periodic Table, Chemical Bonding, Chemical Reactions, and Energy",
         "Physics": "Mechanics, Thermodynamics, Electromagnetism, Optics, Relativity, Nuclear Physics, Particle Physics, Astrophysics and Cosmology",
         "Engineering": "Unit Conversions, Civil Engineering, Mechanical Engineering, Electrical Engineering, Chemical Engineering, Computer Engineering, Aerospace Engineering, Industrial Engineering, Environmental Engineering, Biomedical Engineering, and Systems Engineering",
+        "Historic People": "Famous figures from history across various cultures and eras.",
+        "Historic Events": "Key events that shaped history and their impact on the world.",
+        "Historic Places": "Famous landmarks and locations of historical significance.",
       },
     };
   }
