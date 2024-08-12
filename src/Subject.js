@@ -15,7 +15,7 @@ class Subject extends React.Component {
       answer: "",  // Stores the current answer
       showQuestion: false,  // Controls visibility of the question
       showAnswer: false,  // Controls visibility of the answer
-      counter: programmingQuestions,  // Counter to track remaining questions
+      counter: programmingQuestions.length,  // Set counter to track remaining questions
       // counter: this.state ? this.state.allQuestions.length : 0,  // Counter to track remaining questions
       showQandA: false, // Controls visibility of the question and answer
     };
@@ -38,37 +38,45 @@ class Subject extends React.Component {
 
     // Method to get a random question and answer
     getRandomQandA = () => {
+      
+      // Check if all questions have been reviewed
+      if (this.state.counter <= 1) {
+        this.setState({
+          showQandA: false, // Hide the question and answer
+          isDone: true,  // Mark as done
+          counter: 0,
+        });
+        return;
+      } 
+
+      // Decrement the counter after ensuring there's still at least one question left
       this.setState({
         counter: this.state.counter - 1,  // Decrease the counter
         showAnswer: false,  // Hide the answer
       });
-  
-      // Check if all questions have been reviewed
-      if (this.state.counter <= 0) {
-        this.setState({
-          showQuestion: false, // Stop showing the question
-          isDone: true,  // Mark as done
-        });
-      } else {
-        // Generate a random index for a question
-        let questions = this.state.allQuestions;
-        let idx = Math.floor(Math.random() * questions.length);
-        this.setState({ showQuestion: true });
+      
+      // Generate a random index for a question
+      let questions = this.state.allQuestions;
+      let idx = Math.floor(Math.random() * questions.length);
 
-        // Ensure the question hasn't been shown before
-        while (dict[idx]) {
-          idx = Math.floor(Math.random() * questions.length);
-        }
-        dict[idx] = true;  // Mark this question as shown
-  
-        let answers = this.state.allAnswers;
-        // Set the question and answer in the state
-        this.setState({
-          question: questions[idx],
-          answer: answers[idx],
-          showQandA: true,
-        });
+      this.setState({ showQuestion: true });
+
+      // Ensure the question hasn't been shown before
+      while (dict[idx] && Object.keys(dict).length < questions.length) {
+        idx = Math.floor(Math.random() * questions.length);
       }
+      
+      dict[idx] = true;  // Mark this question as shown
+
+      let answers = this.state.allAnswers;
+      
+      // Set the question and answer in the state
+      this.setState({
+        question: questions[idx],
+        answer: answers[idx],
+        showQandA: true,
+      });
+
     };
 
   // Method to show the modal
@@ -115,15 +123,6 @@ class Subject extends React.Component {
               {/* Modal to display the question and answer */}
               <Modal className="modal" show={this.state.showModal} onHide={this.handleHideModal}>
                 <Modal.Header closeButton>
-                  {this.state.isDone ? (
-                  // Display a message when all questions have been reviewed
-                  "You have completed the review!"
-                  ) : (
-                  // Display a button to get a new review question
-                  <Button variant="secondary" onClick={this.getRandomQandA}>
-                    Get a new Review Question!
-                  </Button>
-                  )}
                 </Modal.Header>
 
               {this.state.showQandA && (
@@ -140,6 +139,20 @@ class Subject extends React.Component {
                 {this.state.showAnswer && <Modal.Body className="answer" >{this.state.answer}</Modal.Body>}
                 </>
               )}
+
+              <Modal.Footer>
+                <>
+                {this.state.isDone ? (
+                  // Display a message when all questions have been reviewed
+                  "You have completed the review!"
+                  ) : (
+                  // Display a button to get a new review question
+                  <Button variant="secondary" onClick={this.getRandomQandA}>
+                    Get a new Review Question!
+                  </Button>
+                )}
+                </>
+              </Modal.Footer>
                 
               </Modal>
               </>
