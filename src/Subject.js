@@ -1,6 +1,6 @@
 import React from "react";
-import {Card, Button, Modal} from "react-bootstrap";
-import { dict, programmingQuestions, programmingAnswers } from './data.js';
+import { Card, Button, Modal } from "react-bootstrap";
+import axios from "axios";
 
 class Subject extends React.Component {
   constructor(props) {
@@ -15,69 +15,86 @@ class Subject extends React.Component {
       answer: "",  // Stores the current answer
       showQuestion: false,  // Controls visibility of the question
       showAnswer: false,  // Controls visibility of the answer
-      counter: programmingQuestions.length,  // Set counter to track remaining questions
-      // counter: this.state ? this.state.allQuestions.length : 0,  // Counter to track remaining questions
+      counter: 0,  // Counter to track remaining questions
       showQandA: false, // Controls visibility of the question and answer
     };
   }
 
+  // Fetch data from the server
+  fetchSubjectData = async (subject) => {
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_SERVER}/subject?subject=${subject}`);
+      console.log("API Response: ", response.data[0]);
+      
+      const { description, questionAndAnswers } = response.data[0];
+      console.log("description: ", description)
+      console.log("questionAndAnswers: ", questionAndAnswers)
+
+      // Separate questions and answers
+      const allQuestions = questionAndAnswers.map(item => item.question);
+      const allAnswers = questionAndAnswers.map(item => item.answer);
+
+      this.setState({
+        selectedSubject: subject,
+        description: description,
+        allQuestions,
+        allAnswers,
+        counter: allQuestions.length,
+        showModal: true, // Show the modal
+      });
+    } catch (error) {
+      console.error('Error fetching subject data:', error);
+    }
+  };
+
   selectSubject = (subject) => {
     console.log("subject selected: ", subject);
     
-    this.setState({
-      selectedSubject: subject,
-      // allQuestions: data[`${subject}Questions`],
-      // allAnswers: data[`${subject}Answers`],
-      allQuestions: programmingQuestions,
-      allAnswers: programmingAnswers,
-      showModal: true, // Show the modal
-    });
-
-    // populate the modal with data matching the requested subject
+    // Fetch the data for the selected subject
+    this.fetchSubjectData(subject);
   }
 
-    // Method to get a random question and answer
-    getRandomQandA = () => {
-      
-      // Check if all questions have been reviewed
-      if (this.state.counter <= 1) {
-        this.setState({
-          showQandA: false, // Hide the question and answer
-          isDone: true,  // Mark as done
-          counter: 0,
-        });
-        return;
-      } 
-
-      // Decrement the counter after ensuring there's still at least one question left
+  // Method to get a random question and answer
+  getRandomQandA = () => {
+    if (this.state.counter <= 1) {
       this.setState({
-        counter: this.state.counter - 1,  // Decrease the counter
-        showAnswer: false,  // Hide the answer
+        showQandA: false, // Hide the question and answer
+        isDone: true,  // Mark as done
+        counter: 0,
       });
-      
-      // Generate a random index for a question
-      let questions = this.state.allQuestions;
-      let idx = Math.floor(Math.random() * questions.length);
+      return;
+    } 
 
-      this.setState({ showQuestion: true });
+    // Decrement the counter after ensuring there's still at least one question left
+    this.setState({
+      counter: this.state.counter - 1,  // Decrease the counter
+      showAnswer: false,  // Hide the answer
+    });
+    
+    // Generate a random index for a question
+    let questions = this.state.allQuestions;
+    let idx = Math.floor(Math.random() * questions.length);
 
-      // Ensure the question hasn't been shown before
-      while (dict[idx] && Object.keys(dict).length < questions.length) {
-        idx = Math.floor(Math.random() * questions.length);
-      }
-      
-      dict[idx] = true;  // Mark this question as shown
+    this.setState({ showQuestion: true });
 
-      let answers = this.state.allAnswers;
-      
-      // Set the question and answer in the state
-      this.setState({
-        question: questions[idx],
-        answer: answers[idx],
-        showQandA: true,
-      });
+    // Ensure the question hasn't been shown before
+    while (this.state.dict && this.state.dict[idx] && Object.keys(this.state.dict).length < questions.length) {
+      idx = Math.floor(Math.random() * questions.length);
+    }
+    
+    this.setState(prevState => ({
+      dict: { ...prevState.dict, [idx]: true } // Mark this question as shown
+    }));
 
-    };
+    let answers = this.state.allAnswers;
+    
+    // Set the question and answer in the state
+    this.setState({
+      question: questions[idx],
+      answer: answers[idx],
+      showQandA: true,
+    });
+  };
 
   // Method to show the modal
   showModal = () => {
@@ -95,15 +112,15 @@ class Subject extends React.Component {
   };
   
   render() {
-    console.log('this.state.question: ', this.state.question)
-    console.log('this.state.answer: ', this.state.answer)
+    // console.log('this.state.question: ', this.state.question)
+    // console.log('this.state.answer: ', this.state.answer)
     return (
       <>
         <Card style={{ width: "18rem" }} bg="info" border="primary" className='card'>
-          <Card.Title className="cardTitle" >{this.props.subject}</Card.Title>
+          <Card.Title className="cardTitle">{this.props.subject}</Card.Title>
           <Card.Body>
-            <Card.Text className="cardText" >
-              Topics covered: {this.props.topicsCovered}
+            <Card.Text className="cardText">
+              {this.props.topicsCovered}
             </Card.Text>
             
             <Button
@@ -117,46 +134,43 @@ class Subject extends React.Component {
           </Card.Body>
         </Card>
 
-            {this.state.showModal && (
-              <>
-
-              {/* Modal to display the question and answer */}
-              <Modal className="modal" show={this.state.showModal} onHide={this.handleHideModal}>
-                <Modal.Header closeButton>
-                </Modal.Header>
+        {this.state.showModal && (
+          <>
+            {/* Modal to display the question and answer */}
+            <Modal className="modal" show={this.state.showModal} onHide={this.handleHideModal}>
+              <Modal.Header closeButton>
+                {this.state.description}
+              </Modal.Header>
 
               {this.state.showQandA && (
                 <>
-                {/* Display the question */}
-                <Modal.Body className="question" >{this.state.question}</Modal.Body>
-                                
-                {/* Button to show the answer */}
-                <Button onClick={this.showMeTheAnswer}>
-                  Show Me the Answer!
-                </Button>
+                  {/* Display the question */}
+                  <Modal.Body className="question">{this.state.question}</Modal.Body>
+                  
+                  {/* Button to show the answer */}
+                  <Button onClick={this.showMeTheAnswer}>
+                    Show Me the Answer!
+                  </Button>
 
-                {/* Display the answer if showAnswer is true */}
-                {this.state.showAnswer && <Modal.Body className="answer" >{this.state.answer}</Modal.Body>}
+                  {/* Display the answer if showAnswer is true */}
+                  {this.state.showAnswer && <Modal.Body className="answer">{this.state.answer}</Modal.Body>}
                 </>
               )}
 
               <Modal.Footer>
-                <>
                 {this.state.isDone ? (
                   // Display a message when all questions have been reviewed
                   "You have completed the review!"
-                  ) : (
+                ) : (
                   // Display a button to get a new review question
                   <Button variant="secondary" onClick={this.getRandomQandA}>
                     Get a new Review Question!
                   </Button>
                 )}
-                </>
               </Modal.Footer>
-                
-              </Modal>
-              </>
-            )}
+            </Modal>
+          </>
+        )}
       </>
     );
   }
